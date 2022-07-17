@@ -48,15 +48,15 @@ from . import DOMAIN
 
 _LOGGER = logging.getLogger(__name__)
 
-light_entity = "light.dining_room_group"
+light_entity = "light.hallway_group"
 # harmony_entity = "remote.theater_harmony_hub"
-switch_action = "zigbee2mqtt/Dining Room Switch/action"
-motion_sensor_action = "zigbee2mqtt/Dining Room Motion Sensor"
+# switch_action = "zigbee2mqtt/Hallway Switch/action"
+motion_sensor_action = "zigbee2mqtt/Hallway Motion Sensor"
 brightness_step = 43
 motion_sensor_brightness = 192
 has_harmony = False
 has_motion_sensor = True
-has_switch = True
+has_switch = False
 
 
 async def async_setup_platform(
@@ -69,7 +69,7 @@ async def async_setup_platform(
     # We only want this platform to be set up via discovery.
     if discovery_info is None:
         return
-    ent = DiningRoomLight()
+    ent = HallwayLight()
     add_entities([ent])
 
     @callback
@@ -94,13 +94,13 @@ async def async_setup_platform(
         )
 
 
-class DiningRoomLight(LightEntity):
-    """Dining Room Light."""
+class HallwayLight(LightEntity):
+    """Hallway Light."""
 
     def __init__(self) -> None:
-        """Initialize Dining Room Light."""
+        """Initialize Hallway Light."""
         self._light = light_entity
-        self._name = "Dining Room"
+        self._name = "Hallway"
         # self._state = 'off'
         self._brightness = 0
         self._brightness_override = 0
