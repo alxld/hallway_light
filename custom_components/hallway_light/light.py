@@ -31,7 +31,7 @@ class HallwayLight(NewLight):
     def __init__(self) -> None:
         """Initialize Hallway Light."""
         super(HallwayLight, self).__init__(
-            "Hallway Light", domain=DOMAIN, debug=False, debug_rl=False
+            "Hallway", domain=DOMAIN, debug=False, debug_rl=False
         )
 
         self.entities["light.hallway_group"] = None
