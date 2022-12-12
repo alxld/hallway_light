@@ -10,6 +10,7 @@ from . import DOMAIN
 sys.path.append("custom_components/new_light")
 from new_light import NewLight
 
+
 async def async_setup_platform(
     hass: HomeAssistant,
     config: ConfigType,
@@ -33,5 +34,5 @@ class HallwayLight(NewLight):
             "Hallway Light", domain=DOMAIN, debug=False, debug_rl=False
         )
 
-        self._entities["light.hallway_group"] = None
+        self.entities["light.hallway_group"] = None
         self.motion_sensors.append("Hallway Motion Sensor")
