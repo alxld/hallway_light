@@ -36,3 +36,4 @@ class HallwayLight(NewLight):
 
         self.entities["light.hallway_group"] = None
         self.motion_sensors.append("Hallway Motion Sensor")
+        self.motion_sensors.append("Kitchen Stairs Motion Sensor")
